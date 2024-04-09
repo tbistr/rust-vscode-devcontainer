@@ -1,34 +1,23 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/debian
 {
-    "name": "rust-vsode-devcontainer",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "args": {
-            // Options
-            // "NODE_VERSION": "lts/*"
-        }
-    },
-    "runArgs": [
-        // "--cap-add=SYS_PTRACE",
-        // "--security-opt",
-        // "seccomp=unconfined"
-    ],
-    // Configure tool-specific properties.
-    "customizations": {
-        // Configure properties specific to VS Code.
-        "vscode": {
-            // Add the IDs of extensions you want installed when the container is created.
-            "extensions": [
-                "rust-lang.rust-analyzer",
-                "vadimcn.vscode-lldb",
-                "tamasfe.even-better-toml",
-                "serayuzgur.crates"
-            ]
-        }
-    },
-    // Use 'forwardPorts' to make a list of ports inside the container available locally.
-    // "forwardPorts": [9000],
-    // Use 'postCreateCommand' to run commands after the container is created.
-    // "postCreateCommand": "go version",
-    // Uncomment to connect as a non-root user. More info: https://aka.ms/vscode-remote/containers/non-root.
-    "remoteUser": "vscode"
+	"name": "Debian",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/rust:1": {
+			"version": "1.70",
+			"profile": "minimal"
+		}
+	}
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Configure tool-specific properties.
+	// "customizations": {},
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
 }
